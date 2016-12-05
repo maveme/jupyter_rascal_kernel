@@ -1,0 +1,6 @@
+{
+ "argv": ["python3", "/Users/Mauricio/PycharmProjects/RascalKernel/rascalKernel.py",
+          "-f", "{connection_file}"],
+ "display_name": "rascal",
+ "language": "rascal"
+}
