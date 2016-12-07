@@ -1,6 +1,10 @@
 {
- "argv": ["python3", "/Users/Mauricio/PycharmProjects/RascalKernel/rascalKernel.py",
+ "argv": ["python3", "/Users/Mauricio/PycharmProjects/RascalKernel/__main__.py",
           "-f", "{connection_file}"],
- "display_name": "rascal",
- "language": "rascal"
+ "display_name": "Rascal",
+ "language": "Rascal",
+  "env" : {
+     "JAVA_HOME": "/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home",
+     "RASCAL_LOCATION": "/Users/Mauricio/Downloads/rascal-shell-stable.jar"
+     }
 }

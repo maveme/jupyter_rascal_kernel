@@ -5,6 +5,9 @@ import signal
 
 
 class RascalKernel(Kernel):
+    _JAVA_COMMAND = '{}/bin/java'.format(os.environ['JAVA_HOME'])
+    _RASCAL_LOCATION = os.environ['RASCAL_LOCATION']
+
     implementation = ''
     implementation_version = ''
     language = 'Rascal'
@@ -13,18 +16,13 @@ class RascalKernel(Kernel):
     language_info = {
         'name': 'rascal',
         'codemirror_mode': 'java',
-        'mimetype': 'p',
+        'mimetype': 'text/x-java',
         'file_extension': '.rsc'
     }
 
     def __init__(self, **kwargs):
         Kernel.__init__(self, **kwargs)
         self._start_rascal()
-
-    # _JAVA_COMMAND = '{}/bin/java'.format(os.environ['JAVA_HOME'])
-    _JAVA_COMMAND = "/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/bin/java"
-    # _RASCAL_LOCATION = os.environ['RASCAL_LOCATION']
-    _RASCAL_LOCATION = "/Users/Mauricio/Downloads/rascal-shell-stable.jar"
 
     def _start_rascal(self):
         sig = signal.signal(signal.SIGINT, signal.SIG_DFL)
@@ -76,9 +74,3 @@ class RascalKernel(Kernel):
         else:
             return {'status': 'ok', 'execution_count': self.execution_count,
                     'payload': [], 'user_expressions': {}}
-
-
-if __name__ == '__main__':
-    from ipykernel.kernelapp import IPKernelApp
-
-    IPKernelApp.launch_instance(kernel_class=RascalKernel)
